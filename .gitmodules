@@ -1,0 +1,3 @@
+[submodule "RoboTwin"]
+	path = RoboTwin
+	url = https://github.com/robotwin-Platform/RoboTwin.git

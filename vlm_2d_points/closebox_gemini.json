@@ -1,0 +1,23 @@
+[
+    {"point": [400, 405], "label": "lid_top_left_corner"},
+    {"point": [430, 630], "label": "lid_bottom_left_corner"},
+    {"point": [565, 465], "label": "lid_top_right_corner_hinge"},
+    {"point": [610, 675], "label": "lid_bottom_right_corner_hinge"},
+    {"point": [500, 540], "label": "lid_surface_center"},
+    {"point": [482, 435], "label": "lid_top_edge_midpoint"},
+    {"point": [520, 652], "label": "lid_bottom_edge_midpoint"},
+    {"point": [790, 640], "label": "box_rim_front_right_corner"},
+    {"point": [725, 440], "label": "box_rim_back_right_corner"},
+    {"point": [605, 765], "label": "box_outer_bottom_front_corner"},
+    {"point": [780, 730], "label": "box_outer_bottom_right_corner"},
+    {"point": [605, 655], "label": "box_inner_floor_front_left_corner"},
+    {"point": [715, 630], "label": "box_inner_floor_front_right_corner"},
+    {"point": [665, 530], "label": "box_inner_floor_back_right_corner"},
+    {"point": [580, 550], "label": "box_inner_floor_back_left_corner"},
+    {"point": [640, 590], "label": "box_inner_floor_center"},
+    {"point": [700, 657], "label": "box_rim_front_edge_midpoint"},
+    {"point": [757, 540], "label": "box_rim_right_edge_midpoint"},
+    {"point": [645, 452], "label": "box_rim_back_edge_midpoint"},
+    {"point": [692, 702], "label": "box_outer_front_wall_center"},
+    {"point": [752, 590], "label": "box_outer_right_wall_center"}
+  ]

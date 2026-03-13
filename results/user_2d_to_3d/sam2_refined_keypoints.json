@@ -1,0 +1,149 @@
+[
+  {
+    "label": "lid_top_left_corner",
+    "point": [
+      457.2,
+      374.625
+    ]
+  },
+  {
+    "label": "lid_bottom_left_corner",
+    "point": [
+      491.49,
+      582.75
+    ]
+  },
+  {
+    "label": "lid_top_right_corner_hinge",
+    "point": [
+      645.795,
+      430.125
+    ]
+  },
+  {
+    "label": "lid_bottom_right_corner_hinge",
+    "point": [
+      697.23,
+      624.375
+    ]
+  },
+  {
+    "label": "lid_surface_center",
+    "point": [
+      571.5,
+      499.5
+    ]
+  },
+  {
+    "label": "lid_top_edge_midpoint",
+    "point": [
+      550.926,
+      402.375
+    ]
+  },
+  {
+    "label": "lid_bottom_edge_midpoint",
+    "point": [
+      594.36,
+      603.1
+    ]
+  },
+  {
+    "label": "box_rim_front_right_corner",
+    "point": [
+      902.97,
+      592.0
+    ]
+  },
+  {
+    "label": "box_rim_back_right_corner",
+    "point": [
+      828.675,
+      407.0
+    ]
+  },
+  {
+    "label": "box_outer_bottom_front_corner",
+    "point": [
+      691.515,
+      707.625
+    ]
+  },
+  {
+    "label": "box_outer_bottom_right_corner",
+    "point": [
+      891.54,
+      675.25
+    ]
+  },
+  {
+    "label": "box_inner_floor_front_left_corner",
+    "point": [
+      691.515,
+      605.875
+    ]
+  },
+  {
+    "label": "box_inner_floor_front_right_corner",
+    "point": [
+      817.245,
+      582.75
+    ]
+  },
+  {
+    "label": "box_inner_floor_back_right_corner",
+    "point": [
+      760.095,
+      490.25
+    ]
+  },
+  {
+    "label": "box_inner_floor_back_left_corner",
+    "point": [
+      662.94,
+      508.75
+    ]
+  },
+  {
+    "label": "box_inner_floor_center",
+    "point": [
+      731.52,
+      545.75
+    ]
+  },
+  {
+    "label": "box_rim_front_edge_midpoint",
+    "point": [
+      800.1,
+      607.725
+    ]
+  },
+  {
+    "label": "box_rim_right_edge_midpoint",
+    "point": [
+      865.251,
+      499.5
+    ]
+  },
+  {
+    "label": "box_rim_back_edge_midpoint",
+    "point": [
+      737.235,
+      418.1
+    ]
+  },
+  {
+    "label": "box_outer_front_wall_center",
+    "point": [
+      790.956,
+      649.35
+    ]
+  },
+  {
+    "label": "box_outer_right_wall_center",
+    "point": [
+      859.536,
+      545.75
+    ]
+  }
+]

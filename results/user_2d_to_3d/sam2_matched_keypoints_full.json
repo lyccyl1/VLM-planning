@@ -1,0 +1,468 @@
+{
+  "matches": [
+    {
+      "label": "lid_top_left_corner",
+      "input_point_xy": [
+        457.2,
+        374.625
+      ],
+      "matched_point_xy": [
+        457.2,
+        374.625
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 59480,
+      "sam_score": 0.496094,
+      "input_inside_mask": true
+    },
+    {
+      "label": "lid_bottom_left_corner",
+      "input_point_xy": [
+        491.49,
+        582.75
+      ],
+      "matched_point_xy": [
+        491.49,
+        582.75
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 445934,
+      "sam_score": 0.722656,
+      "input_inside_mask": true
+    },
+    {
+      "label": "lid_top_right_corner_hinge",
+      "input_point_xy": [
+        645.795,
+        430.125
+      ],
+      "matched_point_xy": [
+        645.795,
+        430.125
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56960,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "lid_bottom_right_corner_hinge",
+      "input_point_xy": [
+        697.23,
+        624.375
+      ],
+      "matched_point_xy": [
+        697.23,
+        624.375
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 93526,
+      "sam_score": 0.824219,
+      "input_inside_mask": true
+    },
+    {
+      "label": "lid_surface_center",
+      "input_point_xy": [
+        571.5,
+        499.5
+      ],
+      "matched_point_xy": [
+        571.5,
+        499.5
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 38693,
+      "sam_score": 0.984375,
+      "input_inside_mask": true
+    },
+    {
+      "label": "lid_top_edge_midpoint",
+      "input_point_xy": [
+        550.926,
+        402.375
+      ],
+      "matched_point_xy": [
+        550.926,
+        402.375
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 38667,
+      "sam_score": 0.988281,
+      "input_inside_mask": true
+    },
+    {
+      "label": "lid_bottom_edge_midpoint",
+      "input_point_xy": [
+        594.36,
+        603.1
+      ],
+      "matched_point_xy": [
+        594.36,
+        603.1
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 38811,
+      "sam_score": 0.988281,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_rim_front_right_corner",
+      "input_point_xy": [
+        902.97,
+        592.0
+      ],
+      "matched_point_xy": [
+        902.97,
+        592.0
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 57123,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_rim_back_right_corner",
+      "input_point_xy": [
+        828.675,
+        407.0
+      ],
+      "matched_point_xy": [
+        828.675,
+        407.0
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 453206,
+      "sam_score": 0.992188,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_outer_bottom_front_corner",
+      "input_point_xy": [
+        691.515,
+        707.625
+      ],
+      "matched_point_xy": [
+        691.515,
+        707.625
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 444829,
+      "sam_score": 0.871094,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_outer_bottom_right_corner",
+      "input_point_xy": [
+        891.54,
+        675.25
+      ],
+      "matched_point_xy": [
+        891.54,
+        675.25
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 453428,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_inner_floor_front_left_corner",
+      "input_point_xy": [
+        691.515,
+        605.875
+      ],
+      "matched_point_xy": [
+        691.515,
+        605.875
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 38427,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_inner_floor_front_right_corner",
+      "input_point_xy": [
+        817.245,
+        582.75
+      ],
+      "matched_point_xy": [
+        817.245,
+        582.75
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56795,
+      "sam_score": 0.976562,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_inner_floor_back_right_corner",
+      "input_point_xy": [
+        760.095,
+        490.25
+      ],
+      "matched_point_xy": [
+        760.095,
+        490.25
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56820,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_inner_floor_back_left_corner",
+      "input_point_xy": [
+        662.94,
+        508.75
+      ],
+      "matched_point_xy": [
+        662.94,
+        508.75
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 38614,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_inner_floor_center",
+      "input_point_xy": [
+        731.52,
+        545.75
+      ],
+      "matched_point_xy": [
+        731.52,
+        545.75
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56515,
+      "sam_score": 0.917969,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_rim_front_edge_midpoint",
+      "input_point_xy": [
+        800.1,
+        607.725
+      ],
+      "matched_point_xy": [
+        800.1,
+        607.725
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56763,
+      "sam_score": 0.976562,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_rim_right_edge_midpoint",
+      "input_point_xy": [
+        865.251,
+        499.5
+      ],
+      "matched_point_xy": [
+        865.251,
+        499.5
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 57016,
+      "sam_score": 0.820312,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_rim_back_edge_midpoint",
+      "input_point_xy": [
+        737.235,
+        418.1
+      ],
+      "matched_point_xy": [
+        737.235,
+        418.1
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56733,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_outer_front_wall_center",
+      "input_point_xy": [
+        790.956,
+        649.35
+      ],
+      "matched_point_xy": [
+        790.956,
+        649.35
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56819,
+      "sam_score": 0.972656,
+      "input_inside_mask": true
+    },
+    {
+      "label": "box_outer_right_wall_center",
+      "input_point_xy": [
+        859.536,
+        545.75
+      ],
+      "matched_point_xy": [
+        859.536,
+        545.75
+      ],
+      "distance_px": 0.0,
+      "mask_area_px": 56740,
+      "sam_score": 0.980469,
+      "input_inside_mask": true
+    }
+  ],
+  "refined_keypoints": [
+    {
+      "label": "lid_top_left_corner",
+      "point": [
+        457.2,
+        374.625
+      ]
+    },
+    {
+      "label": "lid_bottom_left_corner",
+      "point": [
+        491.49,
+        582.75
+      ]
+    },
+    {
+      "label": "lid_top_right_corner_hinge",
+      "point": [
+        645.795,
+        430.125
+      ]
+    },
+    {
+      "label": "lid_bottom_right_corner_hinge",
+      "point": [
+        697.23,
+        624.375
+      ]
+    },
+    {
+      "label": "lid_surface_center",
+      "point": [
+        571.5,
+        499.5
+      ]
+    },
+    {
+      "label": "lid_top_edge_midpoint",
+      "point": [
+        550.926,
+        402.375
+      ]
+    },
+    {
+      "label": "lid_bottom_edge_midpoint",
+      "point": [
+        594.36,
+        603.1
+      ]
+    },
+    {
+      "label": "box_rim_front_right_corner",
+      "point": [
+        902.97,
+        592.0
+      ]
+    },
+    {
+      "label": "box_rim_back_right_corner",
+      "point": [
+        828.675,
+        407.0
+      ]
+    },
+    {
+      "label": "box_outer_bottom_front_corner",
+      "point": [
+        691.515,
+        707.625
+      ]
+    },
+    {
+      "label": "box_outer_bottom_right_corner",
+      "point": [
+        891.54,
+        675.25
+      ]
+    },
+    {
+      "label": "box_inner_floor_front_left_corner",
+      "point": [
+        691.515,
+        605.875
+      ]
+    },
+    {
+      "label": "box_inner_floor_front_right_corner",
+      "point": [
+        817.245,
+        582.75
+      ]
+    },
+    {
+      "label": "box_inner_floor_back_right_corner",
+      "point": [
+        760.095,
+        490.25
+      ]
+    },
+    {
+      "label": "box_inner_floor_back_left_corner",
+      "point": [
+        662.94,
+        508.75
+      ]
+    },
+    {
+      "label": "box_inner_floor_center",
+      "point": [
+        731.52,
+        545.75
+      ]
+    },
+    {
+      "label": "box_rim_front_edge_midpoint",
+      "point": [
+        800.1,
+        607.725
+      ]
+    },
+    {
+      "label": "box_rim_right_edge_midpoint",
+      "point": [
+        865.251,
+        499.5
+      ]
+    },
+    {
+      "label": "box_rim_back_edge_midpoint",
+      "point": [
+        737.235,
+        418.1
+      ]
+    },
+    {
+      "label": "box_outer_front_wall_center",
+      "point": [
+        790.956,
+        649.35
+      ]
+    },
+    {
+      "label": "box_outer_right_wall_center",
+      "point": [
+        859.536,
+        545.75
+      ]
+    }
+  ]
+}
