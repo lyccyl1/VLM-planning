@@ -1,14 +1,14 @@
 # VLM-planning
 
-This repository contains a practical 2D-to-3D keypoint planning pipeline for manipulation-oriented scenes.
-It combines:
+本仓库提供一个面向机器人操作场景的实用型 2D 到 3D 关键点规划流水线。
+核心流程包含：
 
-- 2D keypoints from a VLM JSON input.
-- SAM2-based local keypoint refinement on image masks.
-- MoGe-based monocular 3D point lifting.
-- A post-processing leveling step to enforce geometric constraints in 3D.
+- 从 VLM 生成的 JSON 中读取 2D 关键点。
+- 基于 SAM2 的局部关键点掩码匹配与修正。
+- 基于 MoGe 的单目 3D 点重建与关键点抬升。
+- 通过后处理进行 3D 几何约束对齐（leveling）。
 
-The main use case is to convert semantic 2D keypoints into stable 3D planning anchors that can be consumed by downstream robot planning code.
+主要用途是把语义化的 2D 关键点转换为更稳定的 3D 规划锚点，供下游机器人规划与控制模块直接使用。
 
 ## Current Repo Layout
 
