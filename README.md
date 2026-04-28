@@ -24,15 +24,15 @@ RoboTwin policy 配置文件：
 - `openrouter_vlm_model: qwen/qwen-vl-max`
 - `vlm_preprocess_strategy: bbox_crop_corners`
 - `vlm_crop_box_source: vlm_then_sam`
-- `llm_prompt_file: /data1/user/ycliu/WORKSPACE/prompt_dsr1.log`
-- `qwen_api_key_file: /data1/user/ycliu/WORKSPACE/key.md`
+- `llm_prompt_file: <your_prompt_file>`
+- `qwen_api_key_file: <your_api_key_file>`
 
 ## 快速开始（按任务名 + 轮次重复测试）
 
 > 这是当前推荐入口：只改任务名和轮次即可复用整套流程。
 
 ```bash
-cd /data1/user/ycliu/VLM-planning/environment/RoboTwin
+cd environment/RoboTwin
 
 bash script/run_vlm_algo_loop.sh \
   --task stack_blocks_two \
@@ -77,7 +77,7 @@ bash script/run_vlm_algo_loop.sh --task move_can_pot --rounds 5 --seed-start 0 -
 常用参数：
 
 ```bash
-cd /data1/user/ycliu/VLM-planning/environment/RoboTwin
+cd environment/RoboTwin
 
 conda run -n robotwin python script/run_vlm_policy_one_round_test.py \
   --task stack_blocks_two \
@@ -90,7 +90,7 @@ conda run -n robotwin python script/run_vlm_policy_one_round_test.py \
 
 说明：
 - 若不传 `--instruction`，会自动读取 `description/task_instruction/<task>.json` 的 `full_description`。
-- 脚本会自动尝试从环境变量、policy config、`/data1/user/ycliu/WORKSPACE/key.md` 读取 OpenRouter key。
+- 脚本会自动尝试从环境变量或 policy config 读取 OpenRouter key。
 
 ## 常见任务名
 
