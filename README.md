@@ -75,6 +75,21 @@ Default script paths are absolute and environment-specific; you should override 
 
 ## Quick Start
 
+### 0) One-command test pipeline (no SAM-2, 1280x720, image + 2D keypoint code)
+
+```bash
+cd /data1/user/ycliu/VLM-planning
+bash scripts/run_test_pipeline.sh \
+  /data1/user/ycliu/closebox.png \
+  /data1/user/ycliu/VLM-planning/vlm_2d_points/closebox_gemini.py
+```
+
+By default, this command runs in direct-keypoint mode (no SAM-2), resizes processing resolution to `1280 x 720`, outputs to `results/test_pipeline_nosam2_YYYYMMDD_HHMMSS/`, and produces:
+
+- `keypoints_on_original_image.png` (2D keypoints overlaid on original image)
+- `keypoints_3d_reconstruction.png` (3D keypoint shape for visual verification)
+- `moge_depth_with_keypoints.png` and `keypoints_3d_moge.json`
+
 ### 1) Run 2D -> 3D reconstruction
 
 ```bash
@@ -92,6 +107,19 @@ python pipeline_2d_to_3d_sam2_moge.py \
   --point-space norm1000 \
   --output-point-order xy \
   --output-point-space pixel
+```
+
+使用 GT depth + 相机内参直接把 2D 点投影到 3D（不使用 MoGe 的 X,Y）：
+
+```bash
+python pipeline_2d_to_3d_sam2_moge.py \
+  --image /data1/user/ycliu/VLM-planning/resource/real_607/pickup/carrot/frame_0001_20260316_210552_851_color.jpg \
+  --keypoints /path/to/vlm_keypoints.json \
+  --depth-source gt_npy_intrinsics \
+  --gt-depth-npy /data1/user/ycliu/VLM-planning/resource/real_607/pickup/carrot/frame_0001_20260316_210552_851_depth.npy \
+  --camera-fx <fx> --camera-fy <fy> --camera-cx <cx> --camera-cy <cy> \
+  --disable-sam2 \
+  --out-dir /path/to/output_dir
 ```
 
 ### 2) Run 3D leveling
@@ -117,6 +145,58 @@ python rotated_3d_leveling.py \
   --no-strict-equal-height
 ```
 
+### 3) Validate 3D trajectory and visualize in one 3D space
+
+```bash
+cd /data1/user/ycliu/VLM-planning
+
+python validate_trajectory_3d.py \
+  --trace-json /path/to/trace_closebox_gemini.json \
+  --keypoints-3d-json /path/to/keypoints_3d_moge.json \
+  --out-report-json /path/to/trajectory_validation_report.json \
+  --out-plot-png /path/to/trajectory_validation_3d.png \
+  --out-rotate-gif /path/to/trajectory_validation_3d_rotate.gif \
+  --grasp-label "Carrot Middle" \
+  --place-label "Basket Center Inner" \
+  --gif-frames 72 \
+  --gif-fps 12
+```
+
+This step outputs:
+
+- `trajectory_validation_report.json` (pass/fail checks and metrics)
+- `trajectory_validation_3d.png` (keypoints + trajectory in the same 3D space)
+- `trajectory_validation_3d_rotate.gif` (automatic rotating view in the same 3D space)
+
+### 4) Virtual SimpleEnv pipeline（不跑仿真，仅导出可对接输入）
+
+端到端流程：
+- 本地 `Qwen3-VL` 识别 2D 关键点
+- `MoGe` 生成深度/3D 并提升关键点到 3D
+- `Qwen3-VL`（失败则启发式回退）生成 6D 轨迹
+- 导出与 `simpleenv` evaluator 对齐的动作输入
+
+```bash
+cd /data1/user/ycliu/VLM-planning
+bash scripts/run_virtual_simpleenv_pipeline.sh \
+  /data1/user/ycliu/VLM-planning/resource/real_607/pickup/goose/pickup_white_goose.jpg \
+  "Pick up the white goose and place it into the basket." \
+  /data1/user/ycliu/VLM-planning/results/virtual_simpleenv_demo
+```
+
+核心输出：
+- `vlm_keypoints_qwen3vl.json`：2D 关键点
+- `keypoints_3d_moge.json`（或 `keypoints_3d_<depth_source>.json`）：3D 关键点
+- `trace_6d_pose_qwen.json`：绝对位姿轨迹
+- `simpleenv_aligned_actions.json`：逐步动作（含 `world_vector` / `rot_axangle` / `gripper` / `terminate_episode`）
+- `simpleenv_rollout_input.json`：虚拟回放输入包（`action_sequence_processed` + `env_step_actions_7d`）
+- `simpleenv_virtual_input_bundle.json`：本次运行汇总索引
+
+说明：
+- `simpleenv` evaluator 实际执行使用 `np.concatenate([world_vector, rot_axangle, gripper])`。
+- 本仓库导出的 `rot_axangle` 已由 `rx/ry/rz` 增量转换，和 evaluator 的输入语义一致。
+- 本流程不执行环境 step，只做虚拟输入对齐与产物校验。
+
 ## Outputs
 
 After Step 1, the output directory typically contains:
@@ -141,7 +221,7 @@ After Step 2:
 ### `pipeline_2d_to_3d_sam2_moge.py`
 
 - `--image`: Input RGB image.
-- `--keypoints`: Labeled 2D keypoint JSON.
+- `--keypoints`: Labeled 2D keypoint input, supports both `.json` and `.py` (KEYPOINTS/keypoints/get_keypoints/build_keypoints).
 - `--vlm5d-root`: Path to VLM-5d repository (for SAM2 matching module).
 - `--sam2-model-dir`: SAM2 checkpoint/config root.
 - `--moge-model`: MoGe model checkpoint path.
@@ -151,6 +231,9 @@ After Step 2:
 - `--point-space`: Input coordinate space (`pixel` or `norm1000`).
 - `--single-mask`: Disable SAM2 multi-mask selection.
 - `--window-size`: Local robust lifting window radius.
+- `--depth-source`: `moge` / `gt_npy_moge_xy` / `gt_npy_intrinsics`（`gt_npy` 等价于 `gt_npy_moge_xy`）。
+- `--gt-depth-npy`: GT depth 文件（`.npy`）。不传时会自动从 `*_color.*` 推断到 `*_depth.npy`。
+- `--camera-fx --camera-fy --camera-cx --camera-cy`: 当 `--depth-source=gt_npy_intrinsics` 时必填，用于 `2D(u,v)+depth -> 3D(X,Y,Z)` 投影。
 
 ### `rotated_3d_leveling.py`
 
